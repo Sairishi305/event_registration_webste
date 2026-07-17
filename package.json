@@ -1,0 +1,15 @@
+{
+  "name": "warangal-wie-congress-2026",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace client\" \"npm run dev --workspace server\"",
+    "build": "npm run build --workspace client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.2"
+  }
+}
