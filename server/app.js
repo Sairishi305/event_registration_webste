@@ -32,6 +32,18 @@ let store = { admins: [], registrations: [], attendance: [] };
 
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Warangal Zonal WIE Congress 2026 API is Running 🚀",
+    organization: "IEEE VEC SB - Vaagdevi Engineering College",
+    endpoints: {
+      register: "/api/registrations",
+      login: "/api/auth/login",
+      count: "/api/registrations/count"
+    }
+  });
+});
 app.use('/uploads', express.static(uploadDir));
 
 const upload = multer({ dest: uploadDir });
