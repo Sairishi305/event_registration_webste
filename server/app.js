@@ -30,7 +30,16 @@ let pool = null;
 let dbMode = 'mysql';
 let store = { admins: [], registrations: [], attendance: [] };
 
-app.use(cors());
+import cors from "cors";
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://event-registration-webste-client-5h5e-1uza84ecg-sairishi305.vercel.app"
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 app.get("/", (req, res) => {
   res.json({
